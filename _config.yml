@@ -31,9 +31,9 @@ image:               /public/img/luoc.jpg
 color:               '#A85641'
 
 # Fonts
-font:                '"Noto Sans", Georgia, serif'
-font_accent:         '"Roboto Slab", "Noto Sans", Georgia, serif'
-load_google_fonts:   'Roboto+Slab:700|Noto+Sans:400,400italic,700,700italic'
+font:                '"Open Sans", Georgia, serif'
+font_accent:         '"Open Sans", "Open Sans", Georgia, serif'
+load_google_fonts:   'Open+Sans:400,400italic,700,700italic'
 
 # About yourself
 author:
