@@ -40,8 +40,8 @@ author:
   name:              'Tuấn Trần'
 
   # This photo will be used in the about section
-  photo:             https://graph.facebook.com/1091384545/picture?type=normal
-  photo2x:           https://graph.facebook.com/1091384545/picture?type=large
+  photo:             https://graph.facebook.com/100023468679609/picture?type=normal
+  photo2x:           https://graph.facebook.com/100023468679609/picture?type=large
 
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
