@@ -48,19 +48,19 @@ Click click một hồi ta thấy hàm không tên anonymous có vẻ khá khả
 
 Thực hiện lại các thao tác trên website (chuyển trang để gọi lại API), ta thấy từ dòng 5645 biến **f** không có header if-none-match thì sang dòng 5646 đã có biến **f**, do đó việc tính toán if-none-match chắc chắn thực hiện ở line 5645.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_8.png)
-Nhìn qua các hàm thì có replace không đáng quan tâm lắm, hàm anon hình như cũng k có, có **m()** là khả nghi nhất. Di chuột vào **m()** và đợi 1s, thấy ngay nó được định nghĩa ở line 5708.
+Nhìn qua các hàm thì có **replace** không đáng quan tâm lắm, hình như cũng k có **hàm anon** nào, duy nhất **m()** là khả nghi nhất. Di chuột vào **m()** và đợi 1s, thấy ngay nó được định nghĩa ở line 5708.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_10.png)
-Định nghĩa hàm này khá lằng nhằng, nhưng thôi k sao, breakpoint tất tần tật xem nó là cái gì. Nhìn qua thấy md5 có vẻ khả quan r đây.
+Định nghĩa hàm này khá lằng nhằng, nhưng thôi k sao, breakpoint tất tần tật xem nó là cái gì. Nhìn qua thấy *md5* có vẻ khả quan r đây.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_11.png)
-Set breakpoint tá lả xong thì F8 vài lần cho code nó chạy, đến dòng 5723 ta để ý thấy **c.a** có giá trị **55b03** rồi nối với gạch ngang, trông cũng na ná header mình cần tìm đó (if-none-match-: 55b03-fbb1f05b7982c5314d66ec68da70e94f).
+Set breakpoint tá lả xong thì F8 vài lần cho code nó chạy, đến dòng **5723** ta để ý thấy **c.a** có giá trị **55b03** rồi nối với gạch ngang, trông cũng na ná header mình cần tìm đó (*if-none-match-: 55b03-fbb1f05b7982c5314d66ec68da70e94f*).
 
 Đoạn sau thì ta để ý thấy **u** có liên quan đến **md5**, xong ở dưới lại *c.a + "-" + u("" + c.a + u(t) + c.a)*. Xâu chuỗi lại có thể thấy có gì đó liên quan đến md5 hash.
 
 Vì ngu js nên đọc mãi k hiểu lắm, mình quyết định copy cả cụm ném vào [jsnice.org](http://jsnice.org/). Kết quả được như sau : 
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_13.png)
-Bingo, có vẻ như công thức là if-none-match = 55b03-md5_hash(55b03+t+55b03)
+Bingo, có vẻ như công thức là **if-none-match = 55b03-md5_hash(55b03+t+55b03)**
 
-t là gì thì lại F8 vài lần nữa cho qua line 5723 nêu trên, thấy ngay t chính là query string của endpoint đang truy cập vào hehe.
+**t** là gì thì lại F8 vài lần nữa cho qua line **5723** nêu trên, thấy ngay **t** chính là *query string* của endpoint đang truy cập vào hehe.
 ![enter image description here](https://raw.githubusercontent.com/thit-ga-luoc/thitgaluoc.github.io/master/public/img/xoppi_18.png)
 
 Xong tut, các bạn có thể kiểm tra lại bằng cách lấy query string tính theo công thức trên, đảm bảo ăn. Còn đây là sàn nào thì xem kĩ ảnh biết ngay thôi!!!
