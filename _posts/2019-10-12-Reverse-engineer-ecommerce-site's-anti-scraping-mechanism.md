@@ -35,7 +35,7 @@ Nếu nhìn thoáng qua, 2 cặp dữ liệu này trông giống như (1) đã �
 Nhưng mà chắc cũng giống xem trên youtube thôi với mấy tut cờ rắc trên mạng thôi. Thử vận may xem sao :P
 F12 mở DevTools ra nào, set breakpoint với tất cả các url chứa có dấu hiệu của endpoint đang cần tìm (search_items), sau đó F5 browser thôi
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_1.png)
-Khi đã dừng ở breakpoint, ta unminified code xem cho dễ
+Khi đã dừng ở breakpoint, ta unminify code xem cho dễ
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_2.png)
 Sau khi đã unminified, code trông dễ thở hơn nhiều, ta thấy có cái biến **t** có kèm headers trong đó (dòng 27524), có vẻ hay, set breakpoint luôn ở mấy dòng có **t**.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_4.png)
