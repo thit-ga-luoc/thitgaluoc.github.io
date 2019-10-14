@@ -10,17 +10,22 @@ Nếu ai đã từng code tool cho các sàn TMĐT, hẳn đã nhận ra 1 trong
 Nhưng...
 
 Một khi bạn đã viết được 1 cái script tàm tạm tận dụng điều vừa nêu, bạn sẽ thấy dữ liệu API này trả về browser khác hẳn dữ liệu nó trả về khi bạn request trực tiếp đến API. 
+
 Chúng ta tạm gọi sàn TMĐT trong bài là sàn X
 # More on the problem
 Hãy xem 4 ảnh sau để thấy vấn đề : 
+
 Ảnh 1 là request được thực hiện khi truy cập vào website của sàn X
+
 Ảnh 2 là request trực tiếp đến public API của X
 ![request headers số 1](http://thitgaluoc.com/public/img/08:59:19.2019-10-14.png)
 ![JSON response số 1](http://thitgaluoc.com/public/img/08:59:58.2019-10-14.png)
 ![request headers số 2](http://thitgaluoc.com/public/img/09:02:26.2019-10-14.png)
 ![json response số 2](http://thitgaluoc.com/public/img/09:03:09.2019-10-14.png)
 
-Như trong hình, khi thực hiện request trực tiếp đến API mà không kèm header If-None-Match-, dữ liệu trả về đã được obfuscated. Hãy để ý request header trong hình 1 là **If-None-Match-** (có dấu gạch ngang) chứ không phải **If-None-Match** [như cơ chế cache bằng ETag header](https://en.wikipedia.org/wiki/HTTP_ETag).
+Như trong hình, khi thực hiện request trực tiếp đến API mà không kèm header If-None-Match-, dữ liệu trả về đã được obfuscated. 
+
+Hãy để ý request header trong hình 1 là **If-None-Match-** (có dấu gạch ngang) chứ không phải **If-None-Match** [như cơ chế cache bằng ETag header](https://en.wikipedia.org/wiki/HTTP_ETag).
 
 Nếu nhìn thoáng qua, 2 cặp dữ liệu này trông giống như (1) đã được cached ở browser và (2) thì chưa. Nhưng cache kiểu gì mà *price* lại *null* thế kia, shop_location lại còn thiếu chữ nữa. Rõ ràng là obfuscated data chứ không phải cache rồi.
 
