@@ -23,6 +23,7 @@ Nếu nhìn thoáng qua, 2 cặp dữ liệu này trông giống như (1) đã �
 
 # Lục lọi trong code
 Đầu tiên phải nói rằng mình không có tí kiến thức gì mấy về js, cũng như debug js code. File js này lại lên đến hơn 40k dòng, dùng các công cụ deobfs trên mạng như jsnice nó nuốt k trôi.
+
 Nhưng mà chắc cũng giống xem trên youtube thôi với mấy tut cờ rắc trên mạng thôi. Thử vận may xem sao :P
 F12 mở DevTools ra nào, set breakpoint với tất cả các url chứa có dấu hiệu của endpoint đang cần tìm (search_items), sau đó F5 browser thôi
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_1.png)
@@ -31,16 +32,21 @@ Khi đã dừng ở breakpoint, ta unminified code xem cho dễ
 Sau khi đã unminified, code trông dễ thở hơn nhiều, ta thấy có cái biến **t** có kèm headers trong đó (dòng 27524), có vẻ hay, set breakpoint luôn ở mấy dòng có **t**.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_4.png)
 
-Ngó qua một hồi thì khi chạy đến dòng 27524 kể trên, header đã có kèm giá trị If-None-Match- bên trong. Vì ta đang tìm xem giá trị này được tính như thế nào nên phải để ý sang bảng Call Stack bên phải. Click click một hồi ta thấy hàm không tên anonymous có vẻ khá khả nghi. Hàm này chứa biến **f** là header bổ sung cho request. Set tiếp breakpoint tại đây và những chỗ chứa **f** xem sao.
+Ngó qua một hồi thì khi chạy đến dòng 27524 kể trên, header đã có kèm giá trị If-None-Match- bên trong. Vì ta đang tìm xem giá trị này được tính như thế nào nên phải để ý sang bảng Call Stack bên phải. 
+
+Click click một hồi ta thấy hàm không tên anonymous có vẻ khá khả nghi. Hàm này chứa biến **f** là header bổ sung cho request. Set tiếp breakpoint tại đây và những chỗ chứa **f** xem sao.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_7.png)
 Ở đây mình để ý thấy ban đầu f không có if-none-match. Vậy mình set breakpoint ngay trước những chỗ gọi đến các hàm để xem khi nào thì **f** có thêm if-none-match thêm vào (là các mũi tên màu xanh da trời)
+
 Thực hiện lại các thao tác trên website (chuyển trang để gọi lại API), ta thấy từ dòng 5645 biến **f** không có header if-none-match thì sang dòng 5646 đã có biến **f**, do đó việc tính toán if-none-match chắc chắn thực hiện ở line 5645.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_8.png)
 Nhìn qua các hàm thì có replace không đáng quan tâm lắm, hàm anon hình như cũng k có, có **m()** là khả nghi nhất. Di chuột vào **m()** và đợi 1s, thấy ngay nó được định nghĩa ở line 5708.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_10.png)
 Định nghĩa hàm này khá lằng nhằng, nhưng thôi k sao, breakpoint tất tần tật xem nó là cái gì. Nhìn qua thấy md5 có vẻ khả quan r đây.
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_11.png)
-Set breakpoint tá lả xong thì F8 vài lần cho code nó chạy, đến dòng 5723 ta để ý thấy **c.a** có giá trị **55b03** rồi nối với gạch ngang, trông cũng na ná header mình cần tìm đó (if-none-match-: 55b03-fbb1f05b7982c5314d66ec68da70e94f). Đoạn sau thì ta để ý thấy **u** có liên quan đến **md5**, xong ở dưới lại *c.a + "-" + u("" + c.a + u(t) + c.a)*. Xâu chuỗi lại có thể thấy có gì đó liên quan đến md5 hash.
+Set breakpoint tá lả xong thì F8 vài lần cho code nó chạy, đến dòng 5723 ta để ý thấy **c.a** có giá trị **55b03** rồi nối với gạch ngang, trông cũng na ná header mình cần tìm đó (if-none-match-: 55b03-fbb1f05b7982c5314d66ec68da70e94f).
+
+Đoạn sau thì ta để ý thấy **u** có liên quan đến **md5**, xong ở dưới lại *c.a + "-" + u("" + c.a + u(t) + c.a)*. Xâu chuỗi lại có thể thấy có gì đó liên quan đến md5 hash.
 Vì ngu js nên đọc mãi k hiểu lắm, mình quyết định copy cả cụm ném vào [jsnice.org](http://jsnice.org/). Kết quả được như sau : 
 ![enter image description here](http://thitgaluoc.com/public/img/xoppi_13.png)
 Bingo, có vẻ như công thức là if-none-match = 55b03-md5_hash(55b03+t+55b03)
