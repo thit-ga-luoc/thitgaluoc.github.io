@@ -1,8 +1,7 @@
-
 ---
 layout: post
-title: Giải mã header bí ẩn trong public API của 1 sàn TMĐT
-tags: [xoppi, reverse engineering]
+title: OpenWRT WAN watchdog - kiểm tra kết nối mạng và đổi nguồn phát repeater
+tags: [xoppi,reverse engineering]
 ---
 
 # Intro
