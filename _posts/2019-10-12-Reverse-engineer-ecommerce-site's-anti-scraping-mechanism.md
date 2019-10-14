@@ -21,6 +21,7 @@ Hãy xem 4 ảnh sau để thấy vấn đề :
 ![json response số 2](http://thitgaluoc.com/public/img/09:03:09.2019-10-14.png)
 
 Như trong hình, khi thực hiện request trực tiếp đến API mà không kèm header If-None-Match-, dữ liệu trả về đã được obfuscated. Hãy để ý request header trong hình 1 là **If-None-Match-** (có dấu gạch ngang) chứ không phải **If-None-Match** [như cơ chế cache bằng ETag header](https://en.wikipedia.org/wiki/HTTP_ETag).
+
 Nếu nhìn thoáng qua, 2 cặp dữ liệu này trông giống như (1) đã được cached ở browser và (2) thì chưa. Nhưng cache kiểu gì mà *price* lại *null* thế kia, shop_location lại còn thiếu chữ nữa. Rõ ràng là obfuscated data chứ không phải cache rồi.
 
 # Lục lọi trong code
