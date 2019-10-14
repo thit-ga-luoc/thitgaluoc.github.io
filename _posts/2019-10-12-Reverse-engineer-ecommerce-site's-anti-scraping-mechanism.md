@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenWRT WAN watchdog - kiểm tra kết nối mạng và đổi nguồn phát repeater
+title: Giải mã obfuscated public API của một trang thương mại điện tử tại VN
 tags: [xoppi,reverse engineering]
 ---
 
