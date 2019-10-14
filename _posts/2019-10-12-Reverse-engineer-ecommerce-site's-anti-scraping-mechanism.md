@@ -6,7 +6,9 @@ tags: [xoppi,reverse engineering]
 
 # Intro
 Nếu ai đã từng code tool cho các sàn TMĐT, hẳn đã nhận ra 1 trong số chúng có public API, lại còn trả về dữ liệu đã được format JSON và có thể dễ dàng bắt được bằng DevTools của Chrome/Firefox mà không gặp khó khăn gì cả.
+
 Nhưng...
+
 Một khi bạn đã viết được 1 cái script tàm tạm tận dụng điều vừa nêu, bạn sẽ thấy dữ liệu API này trả về browser khác hẳn dữ liệu nó trả về khi bạn request trực tiếp đến API. 
 Chúng ta tạm gọi sàn TMĐT trong bài là sàn X
 # More on the problem
