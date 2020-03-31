@@ -20,6 +20,7 @@ Sau đó đăng nhập, bạn sẽ thấy như thế này :
 ![NextDNS Dashboard](http://thitgaluoc.com/public/img/nextdns-dashboard.png)
 ## Trên PC
 Cách 1 : Dùng Firefox, setup DNS over HTTPS theo hướng dẫn này : [Firefox DNS-over-HTTPS](https://support.mozilla.org/en-US/kb/firefox-dns-over-https#w_manually-enabling-and-disabling-dns-over-https). Bạn cần dán vào firefox địa chỉ (1) như đánh dấu ở đầu bài.
+
 Cách 2 : Cài đặt client của NextDNS theo link ngay ở dashboard như hình trên, sau đó điền ID lấy từ NextDNS Dashboard là được.
 
 ##Trên Router
@@ -35,6 +36,7 @@ cấu hình xong thì reboot thôi!
 
 # Cấu hình chặn quảng cáo
 **Bước 1** : Đăng nhập NextDNS, chọn tab Privacy
+
 **Bước 2** : Bấm Add Blocklist và chọn blocklist như đang cấu hình uBlock/Adblock thôi. Việt mình có cả list hostVN và Fanboy.
 Sau đó thì Enjoy!!!!
 
