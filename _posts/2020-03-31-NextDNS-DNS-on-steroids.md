@@ -43,6 +43,6 @@ Sau đó thì Enjoy!!!!
 ## DNS analytics
 ![NextDNS analytics](http://thitgaluoc.com/public/img/nextdns-analytics.png)
 ## DNS rewrites
-![](http://thitgaluoc.com/public/img/nextdns-rewrites.png)
+![NextDNS RWW](http://thitgaluoc.com/public/img/nextdns-rewrites.png)
 
-#Cool, huh?
+# Cool, huh?
