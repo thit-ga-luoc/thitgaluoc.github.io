@@ -23,7 +23,7 @@ Cách 1 : Dùng Firefox, setup DNS over HTTPS theo hướng dẫn này : [Firefo
 
 Cách 2 : Cài đặt client của NextDNS theo link ngay ở dashboard như hình trên, sau đó điền ID lấy từ NextDNS Dashboard là được.
 
-##Trên Router
+## Trên Router
 Dùng cách này, bạn sẽ cấu hình được NextDNS cho tất cả các thiết bị kết nối đến router. Bạn nên có một con router cài đặt sẵn OpenWRT hoặc DD-WRT hoặc Entware hoặc Padavan hoặc Gargoyle hoặc gì gì đó miễn nó là linux.
 Thường router sẽ dùng dnsmasq, bạn cần SSH đến router, sau đó cấu hình file `dnsmasq.conf` có mấy dòng sau : 
 ```
