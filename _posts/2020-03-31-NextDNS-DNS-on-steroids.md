@@ -11,7 +11,8 @@ Bạn đã biết về Google DNS 8.8.8.8, Cloudflare DNS 1.1.1.1 hay Quad9 9.9.
  - DNS Analytics, cho bạn biết câu trả lời cho câu hỏi : Một tháng tôi vào pornhub bao nhiêu lần?
  - Native Windows/Linux/MacOS/OpenWRT/Android/iOS/pfSense,... client
  - DNS rewrites, cho phép cấu hình dantri.com.vn trỏ về IP của xvideos chẳng hạn.
- - Cryptojacking/Safe Browsing built-in
+ - Cryptojacking/Safe Browsing blocking built-in
+ 
  TẤT CẢ NHỮNG ĐIỀU TRÊN ĐỀU ĐƯỢC THỰC HIỆN TRÊN "ĐIỆN TOÁN ĐÁM MÂY" (một khái niệm được quảng bá bởi BKAV)
 
 # Setup
