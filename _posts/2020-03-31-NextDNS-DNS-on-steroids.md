@@ -24,6 +24,8 @@ Cách 1 : Dùng Firefox, setup DNS over HTTPS theo hướng dẫn này : [Firefo
 
 Cách 2 : Cài đặt client của NextDNS theo link ngay ở dashboard như hình trên, sau đó điền ID lấy từ NextDNS Dashboard là được.
 
+Cách 3 : Trỏ DNS về 45.90.28.10 và 45.90.30.10, sau đó vào my.nextdns.io cập nhật lại IP để DNS nhận ra bạn và áp dụng các thiết lập vào cho máy của bạn.
+
 ## Trên Router
 Dùng cách này, bạn sẽ cấu hình được NextDNS cho tất cả các thiết bị kết nối đến router. Bạn nên có một con router cài đặt sẵn OpenWRT hoặc DD-WRT hoặc Entware hoặc Padavan hoặc Gargoyle hoặc gì gì đó miễn nó là linux.
 Thường router sẽ dùng dnsmasq, bạn cần SSH đến router, sau đó cấu hình file `dnsmasq.conf` có mấy dòng sau : 
@@ -33,6 +35,11 @@ server=45.90.30.10
 ```
 file `dnsmasq.conf` ở đâu thì phụ thuộc vào router của bạn, tôi dùng Padavan nên nó sẽ nằm ở `/etc/storage/dnsmasq`
 cấu hình xong thì reboot thôi!
+Cuối cùng vào my.nextdns.io cập nhật lại IP để DNS nhận ra bạn và áp dụng các thiết lập vào cho máy của bạn.
+NextDNS cho 2 hình thức cập nhật IP bằng **DynamicDNS** hoặc **ping đến 1 link định sẵn** (số `4` ở hình trên). Với cách này, bạn chỉ cần cấu hình cronjob gọi wget hoặc curl đến URL `(4)` là xong. Ví dụ như của tôi là : 
+```
+* * * * * /usr/bin/wget -O- https://link-ip.nextdns.io/7648c1/483c1bded448f6e0 &> /dev/null
+```
 
 
 # Cấu hình chặn quảng cáo
