@@ -15,7 +15,7 @@ Hôm nay tôi xin giới thiệu với anh em một công nghệ proxy cũng mơ
 
 Bên cạnh các công nghệ VPN phổ biến toàn thế giới đang dùng như OpenVPN, SoftEther, hay mới đây nhất là WireGuard, hầu hết đều đã bị vô hiệu hóa, tôi xin điểm qua một vài cái tên nội địa : Shadowsocks, ShadowsocksR, Brook, Trojan, V2Ray,.... . Shadowsocks và Tor vốn được sử dụng rộng rãi, đã bị rơi rụng lả tả sau khi bức tường lửa của chủ tịch Tệp được level up lên một cấp độ mới, [sử dụng cả heuristic analysis để quét các traffic bất thường (mà nó tạo ra)](https://conferences.sigcomm.org/imc/2015/papers/p445.pdf). 
 
-Complex problems require complex solutions. Vỏ quýt dày có móng tay nhọn, V2Ray được sinh ra để kế thừa và phát triển các công nghệ trước đó. Nó sử dụng giao thức UDP, trao đổi thông tin với server dưới dạng các gói tin đã được mã hóa sao cho trông như traffic bình thường. Về các feature của nó, tốt nhất bạn nên xem trên trang chủ, tôi chỉ nhớ láng máng vài từ như WebSocket, mKCP, UDP, BBR.
+Complex problems require complex solutions. Vỏ quýt dày có móng tay nhọn, V2Ray được sinh ra để kế thừa và phát triển các công nghệ trước đó. Nó sử dụng giao thức UDP, trao đổi thông tin với server dưới dạng các gói tin đã được mã hóa sao cho trông như traffic bình thường. Về các feature của nó, tốt nhất anh em nên xem trên trang chủ, tôi chỉ nhớ láng máng vài từ như WebSocket, mKCP, UDP, BBR.
 
 
 ## Liên quan?
