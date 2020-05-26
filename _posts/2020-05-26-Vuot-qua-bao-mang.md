@@ -108,7 +108,9 @@ Bước 3 : Cài đặt theo script và [hướng dẫn ở đây](https://233v2
 
 - Bước 9 : Script chạy xong thì gõ `sudo v2ray qr` để lấy link có dạng `https://233boy.github.io/tools/qr.html#vmess://xxxx`. Dán link này vào trình duyệt ta được mã QR.
 
-- Bước 10 : Lấy điện thoại quét mã QR này để add VPN vào mà dùng thôi. Với PC thì có thể gõ `sudo v2ray url` để lấy url dạng `vmess://xxxxx` sau đó dán vào client để add VPN. 
+- Bước 10 : Vào cloudflare mở lại Proxy status màu cam cho domain/subdomain
+
+- Bước 11 : Lấy điện thoại quét mã QR này để add VPN vào mà dùng thôi. Với PC thì có thể gõ `sudo v2ray url` để lấy url dạng `vmess://xxxxx` sau đó dán vào client để add VPN. 
 
   ![](http://i.imgur.com/r1aY9tu.png)
 
