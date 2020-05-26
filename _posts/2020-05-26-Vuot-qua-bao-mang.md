@@ -115,6 +115,10 @@ Bước 3 : Cài đặt theo script và [hướng dẫn ở đây](https://233v2
   ![](http://i.imgur.com/r1aY9tu.png)
 
 
+** Cloudflare analytics : **
 
+![](http://i.imgur.com/i9jjLmJ.png)
+
+![](http://i.imgur.com/LVK1NmD.png)
 
 
